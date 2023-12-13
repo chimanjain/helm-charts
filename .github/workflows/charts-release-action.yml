@@ -14,7 +14,7 @@ jobs:
     steps:
       # Check out code
       - name: Checkout
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -25,7 +25,7 @@ jobs:
      
      # Run the helm chart release command
       - name: Run karavi chart-releaser
-        uses: helm/chart-releaser-action@v1.0.0
+        uses: helm/chart-releaser-action@v1.6.0
         env:
           CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
           CR_SKIP_EXISTING: "true"
